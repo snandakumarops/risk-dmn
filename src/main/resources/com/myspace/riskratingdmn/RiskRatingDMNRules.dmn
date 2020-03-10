@@ -117,68 +117,18 @@
   </dmn:businessKnowledgeModel>
   <dmn:decision id="_74A4AEBA-8902-46A6-A5B5-C60B7A4274C9" name="Risk Response">
     <dmn:extensionElements/>
-    <dmn:variable id="_6A880271-263A-42B8-8CA5-E80BE0DD6718" name="Risk Response" typeRef="string"/>
+    <dmn:variable id="_6A880271-263A-42B8-8CA5-E80BE0DD6718" name="Risk Response" typeRef="boolean"/>
     <dmn:informationRequirement id="_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0">
       <dmn:requiredDecision href="#_43D78244-F159-4886-B3E2-B2D6F0045830"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_B030DD63-F726-4BAA-A7B1-697F2FE00609" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
-      <dmn:input id="_46EF2E37-59D1-4D2C-8DC3-C97584E4B2CE">
-        <dmn:inputExpression id="_B01F3C29-5419-4080-A247-FA923831CB95" typeRef="number">
-          <dmn:text>Risk Scoring</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:output id="_BAA3388F-CFB3-4716-858B-219BAC314822" typeRef="string"/>
-      <dmn:rule id="_9DA6D445-AC72-417C-8EA7-86921FB820A6">
-        <dmn:inputEntry id="_F4E25698-4672-41BB-8F69-84336BAD804D">
-          <dmn:text>&lt; 1</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_D905577B-C69C-47A4-85A4-112C39881560">
-          <dmn:text>"LOW"</dmn:text>
-        </dmn:outputEntry>
-      </dmn:rule>
-      <dmn:rule id="_77D8DE1F-F2B5-4C2C-8EB0-356F190FFB1E">
-        <dmn:inputEntry id="_B2943E81-152B-49A5-807D-3009FE1B09F4">
-          <dmn:text>[1..2]</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_EBA9530A-87C2-4F57-B899-644406D211A3">
-          <dmn:text>"MEDIUM"</dmn:text>
-        </dmn:outputEntry>
-      </dmn:rule>
-      <dmn:rule id="_52BD43B8-65FF-47C5-A2B0-F1BA17B00A24">
-        <dmn:inputEntry id="_78BCB1AC-401E-475F-878B-6A34380F2DDA">
-          <dmn:text>&gt; 3</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_93809863-9733-42BB-8D65-15F94DED2A89">
-          <dmn:text>"HIGH"</dmn:text>
-        </dmn:outputEntry>
-      </dmn:rule>
-    </dmn:decisionTable>
+    <dmn:literalExpression id="_4DC28C21-876F-4576-AAA8-EB76A8741AEC">
+      <dmn:text>Risk Scoring &lt; 3</dmn:text>
+    </dmn:literalExpression>
   </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="_DC2BE703-5312-4216-9129-A37D7DCDBDED">
-            <kie:width>50.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>200.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_8FB04217-12E5-46A8-8999-890F5710DA69">
-            <kie:width>200.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_97F9E141-433F-43FD-A219-6C197AC2DF59">
-            <kie:width>200.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_FC87E58A-4B3B-4F80-8C6F-9401A8D0448A">
-            <kie:width>50.0</kie:width>
-            <kie:width>370.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_B030DD63-F726-4BAA-A7B1-697F2FE00609">
-            <kie:width>50.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
-          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_9A1145D6-1C88-4F0D-A7E3-BCC3A24F4DB2">
             <kie:width>50.0</kie:width>
             <kie:width>100.0</kie:width>
@@ -205,6 +155,20 @@
           <kie:ComponentWidths dmnElementRef="_BE12776C-8A78-4937-8ED8-2A394407853E">
             <kie:width>370.0</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_DC2BE703-5312-4216-9129-A37D7DCDBDED">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>200.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_8FB04217-12E5-46A8-8999-890F5710DA69"/>
+          <kie:ComponentWidths dmnElementRef="_97F9E141-433F-43FD-A219-6C197AC2DF59"/>
+          <kie:ComponentWidths dmnElementRef="_FC87E58A-4B3B-4F80-8C6F-9401A8D0448A">
+            <kie:width>50.0</kie:width>
+            <kie:width>370.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_4DC28C21-876F-4576-AAA8-EB76A8741AEC">
+            <kie:width>130.0</kie:width>
+          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-_07AC3194-23D6-48D9-B775-9620C056D617" dmnElementRef="_07AC3194-23D6-48D9-B775-9620C056D617" isCollapsed="false">
@@ -216,13 +180,13 @@
         <dc:Bounds x="232" y="264" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-_ED2C99CD-8874-4BC4-8205-F15037F4A240" dmnElementRef="_ED2C99CD-8874-4BC4-8205-F15037F4A240" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-_43D78244-F159-4886-B3E2-B2D6F0045830" dmnElementRef="_43D78244-F159-4886-B3E2-B2D6F0045830" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="145" y="122" width="100" height="50"/>
+        <dc:Bounds x="362" y="122" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_407F6417-949A-4AED-929D-2584DA1F9E42" dmnElementRef="_407F6417-949A-4AED-929D-2584DA1F9E42" isCollapsed="false">
@@ -234,6 +198,15 @@
         <dc:Bounds x="470" y="264" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_ED2C99CD-8874-4BC4-8205-F15037F4A240" dmnElementRef="_ED2C99CD-8874-4BC4-8205-F15037F4A240" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="145" y="122" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_74A4AEBA-8902-46A6-A5B5-C60B7A4274C9" dmnElementRef="_74A4AEBA-8902-46A6-A5B5-C60B7A4274C9" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -243,19 +216,6 @@
         <dc:Bounds x="542" y="122" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-_43D78244-F159-4886-B3E2-B2D6F0045830" dmnElementRef="_43D78244-F159-4886-B3E2-B2D6F0045830" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="362" y="122" width="100" height="50"/>
-        <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="dmnedge-_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0" dmnElementRef="_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0">
-        <di:waypoint x="462" y="147"/>
-        <di:waypoint x="542" y="147"/>
-      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_6C9A1780-003D-4506-B768-C60AF25736C5" dmnElementRef="_6C9A1780-003D-4506-B768-C60AF25736C5">
         <di:waypoint x="282" y="264"/>
         <di:waypoint x="412" y="172"/>
@@ -267,6 +227,10 @@
       <dmndi:DMNEdge id="dmnedge-_39A484B1-01AE-4F87-94CD-079FB9E2E4A8" dmnElementRef="_39A484B1-01AE-4F87-94CD-079FB9E2E4A8">
         <di:waypoint x="245" y="147"/>
         <di:waypoint x="362" y="147"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0" dmnElementRef="_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0">
+        <di:waypoint x="462" y="147"/>
+        <di:waypoint x="542" y="147"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
