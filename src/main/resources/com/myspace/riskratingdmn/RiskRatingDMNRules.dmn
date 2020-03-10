@@ -138,7 +138,7 @@
       </dmn:rule>
       <dmn:rule id="_77D8DE1F-F2B5-4C2C-8EB0-356F190FFB1E">
         <dmn:inputEntry id="_B2943E81-152B-49A5-807D-3009FE1B09F4">
-          <dmn:text>1..2</dmn:text>
+          <dmn:text>[1..2]</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_EBA9530A-87C2-4F57-B899-644406D211A3">
           <dmn:text>"MEDIUM"</dmn:text>
