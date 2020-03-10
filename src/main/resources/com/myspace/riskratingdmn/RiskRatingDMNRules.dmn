@@ -115,6 +115,45 @@
       </dmn:context>
     </dmn:encapsulatedLogic>
   </dmn:businessKnowledgeModel>
+  <dmn:decision id="_74A4AEBA-8902-46A6-A5B5-C60B7A4274C9" name="Risk Response">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6A880271-263A-42B8-8CA5-E80BE0DD6718" name="Risk Response" typeRef="string"/>
+    <dmn:informationRequirement id="_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0">
+      <dmn:requiredDecision href="#_43D78244-F159-4886-B3E2-B2D6F0045830"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_B030DD63-F726-4BAA-A7B1-697F2FE00609" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_46EF2E37-59D1-4D2C-8DC3-C97584E4B2CE">
+        <dmn:inputExpression id="_B01F3C29-5419-4080-A247-FA923831CB95" typeRef="number">
+          <dmn:text>Risk Scoring</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_BAA3388F-CFB3-4716-858B-219BAC314822" typeRef="string"/>
+      <dmn:rule id="_9DA6D445-AC72-417C-8EA7-86921FB820A6">
+        <dmn:inputEntry id="_F4E25698-4672-41BB-8F69-84336BAD804D">
+          <dmn:text>&lt; 1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D905577B-C69C-47A4-85A4-112C39881560">
+          <dmn:text>"LOW"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_77D8DE1F-F2B5-4C2C-8EB0-356F190FFB1E">
+        <dmn:inputEntry id="_B2943E81-152B-49A5-807D-3009FE1B09F4">
+          <dmn:text>1..2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_EBA9530A-87C2-4F57-B899-644406D211A3">
+          <dmn:text>"MEDIUM"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_52BD43B8-65FF-47C5-A2B0-F1BA17B00A24">
+        <dmn:inputEntry id="_78BCB1AC-401E-475F-878B-6A34380F2DDA">
+          <dmn:text>&gt; 3</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_93809863-9733-42BB-8D65-15F94DED2A89">
+          <dmn:text>"HIGH"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
@@ -133,6 +172,12 @@
           <kie:ComponentWidths dmnElementRef="_FC87E58A-4B3B-4F80-8C6F-9401A8D0448A">
             <kie:width>50.0</kie:width>
             <kie:width>370.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_B030DD63-F726-4BAA-A7B1-697F2FE00609">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_9A1145D6-1C88-4F0D-A7E3-BCC3A24F4DB2">
             <kie:width>50.0</kie:width>
@@ -189,6 +234,15 @@
         <dc:Bounds x="470" y="264" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_74A4AEBA-8902-46A6-A5B5-C60B7A4274C9" dmnElementRef="_74A4AEBA-8902-46A6-A5B5-C60B7A4274C9" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="542" y="122" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_43D78244-F159-4886-B3E2-B2D6F0045830" dmnElementRef="_43D78244-F159-4886-B3E2-B2D6F0045830" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -198,6 +252,10 @@
         <dc:Bounds x="362" y="122" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0" dmnElementRef="_0C8C0D27-FA81-4223-BB1B-FF6A353F6BD0">
+        <di:waypoint x="462" y="147"/>
+        <di:waypoint x="542" y="147"/>
+      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_6C9A1780-003D-4506-B768-C60AF25736C5" dmnElementRef="_6C9A1780-003D-4506-B768-C60AF25736C5">
         <di:waypoint x="282" y="264"/>
         <di:waypoint x="412" y="172"/>
