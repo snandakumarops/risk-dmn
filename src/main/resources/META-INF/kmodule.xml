@@ -1,3 +1,4 @@
 <kmodule xmlns="http://www.drools.org/xsd/kmodule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <kbase name="rules" packages="com.myspace.riskratingdmn" default="true"/>
+  <ksession name="default-stateless-ksession" type="stateless" default="true" clockType="realtime"/>
 </kmodule>
